@@ -6,7 +6,6 @@ import Input from "../components/input";
 export default function Home() {
     return (
         <View style={styles.Container}>
-            <Text style={styles.textCenter}>Hello World</Text>
             <Input />
         </View>
     )
