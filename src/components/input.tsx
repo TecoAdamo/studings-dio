@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
+        padding: 12
     },
     inputBox: {
         borderWidth: 1,

@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Switch, StyleSheet } from "react-native";
+import { View, Switch, StyleSheet, Image } from "react-native";
 
 import { useState } from "react";
 
@@ -8,6 +8,7 @@ export default function ButtonSwitch() {
 
     const [isEnabled, setIsEnabled] = useState(false);
     const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+
 
     return (
         <View style={styles.container}>
@@ -18,7 +19,18 @@ export default function ButtonSwitch() {
                 ios_backgroundColor="#3e3e3e"
                 onValueChange={toggleSwitch}
                 value={isEnabled}
+
             />
+            <View style={styles.imageContainer}>
+                <Image
+                    source={require('../../assets/deadpoolzinho.png')}
+                    style={{
+                        display: isEnabled ? 'flex' : 'none',
+                        width: 40,
+                        height: 40,
+                    }}
+                />
+            </View>
         </View>
     );
 };
@@ -30,7 +42,11 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     SwithBtn: {
-        marginBottom: 19
 
+    },
+    imageContainer: {
+        position: 'absolute',
+        top: 50,
+        right: 20,
     }
 });
